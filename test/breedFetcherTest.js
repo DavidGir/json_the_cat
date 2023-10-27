@@ -17,6 +17,7 @@ describe("fetchBreedDescription", () => {
   });
   it("returns an error for an invalid breed, via callback", (done) => {
     fetchBreedDescription("Chupacabra", (err, desc) => {
+      // https://www.educative.io/answers/what-is-the-assertisnull-method-in-chaijs#
       // we expect error for this scenario as breed name does not exist:
       assert.isNotNull(err);
  
