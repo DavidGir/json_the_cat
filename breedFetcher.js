@@ -13,7 +13,7 @@ const url = `https://api.thecatapi.com/v1/breeds/search?q=${breedName}`;
 
 // Use the request library to make an HTTP GET request to the given URL:
 request(url, (error, response, body) => {
-  // If there is a typo in url the error message will show on the terminal:
+  // Edge-Case: Request failed -> If there is a typo in url the error message will show on the terminal:
   if (error) {
     console.log("An error occurred:", error);
     return;
@@ -25,7 +25,7 @@ request(url, (error, response, body) => {
     //Parsing string data into object with JSON:
     const data = JSON.parse(body);
     // console.log(data);
-    // If breed name is not found:
+    // Edge-Case: Breed not found -> If breed name is not found:
     if (data.length === 0) {
       console.log("Breed not found.");
       return;
